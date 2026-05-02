@@ -6,13 +6,13 @@
 <title>Bhuvana Kruthi Auto Consultancy</title>
 
 <style>
-body {font-family: Arial, sans-serif; margin:0; background:#f5f6fa;}
+body {font-family: Arial; margin:0; background:#f5f6fa;}
 
 header {
   background:#0a3d62;
   color:white;
-  padding:20px;
   text-align:center;
+  padding:20px;
 }
 
 header img {
@@ -22,8 +22,8 @@ header img {
 
 nav {
   background:#1e3799;
-  padding:10px;
   text-align:center;
+  padding:10px;
 }
 
 nav a {
@@ -33,7 +33,9 @@ nav a {
   font-weight:bold;
 }
 
-section {padding:20px;}
+section {
+  padding:20px;
+}
 
 .grid {
   display:grid;
@@ -43,19 +45,24 @@ section {padding:20px;}
 
 .card {
   background:white;
+  padding:15px;
   border-radius:10px;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
-  padding:15px;
+}
+
+.card img {
+  width:100%;
+  border-radius:10px;
 }
 
 .btn {
   display:inline-block;
   background:#27ae60;
   color:white;
-  padding:10px 15px;
+  padding:10px;
+  margin-top:10px;
   text-decoration:none;
   border-radius:5px;
-  margin-top:10px;
 }
 
 footer {
@@ -65,28 +72,41 @@ footer {
   padding:15px;
 }
 
-/* MOBILE */
-@media (max-width:600px) {
-  nav a {
-    display:block;
-    margin:5px 0;
-  }
+/* WhatsApp Button */
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  font-size:20px;
+  text-decoration:none;
+}
+
+/* Mobile */
+@media (max-width:600px){
+  nav a {display:block; margin:5px;}
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" alt="Logo">
+<img src="logo.png">
 <h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
 <p>Buy Second-Hand Cars & Autos with Easy Finance</p>
+<p>✔ 100+ Happy Customers | ✔ Trusted Service</p>
 </header>
 
 <nav>
 <a href="#">Home</a>
 <a href="#">Cars</a>
 <a href="#">Autos</a>
+<a href="#">Finance</a>
 <a href="#">Contact</a>
 </nav>
 
@@ -95,14 +115,20 @@ footer {
 <div class="grid">
 
 <div class="card">
+<img src="car1.jpg">
 <h3>Maruti Swift 2018</h3>
-<p>Price: ₹4,50,000</p>
+<p>₹4,50,000</p>
+<p>✔ Finance Available</p>
+<p>✔ EMI Starts ₹8,500</p>
 <a class="btn" href="tel:YOURNUMBER">Call Now</a>
 </div>
 
 <div class="card">
+<img src="car2.jpg">
 <h3>Hyundai i20 2019</h3>
-<p>Price: ₹5,20,000</p>
+<p>₹5,20,000</p>
+<p>✔ Low Down Payment</p>
+<p>✔ Easy EMI</p>
 <a class="btn" href="tel:YOURNUMBER">Call Now</a>
 </div>
 
@@ -114,8 +140,10 @@ footer {
 <div class="grid">
 
 <div class="card">
-<h3>Passenger Auto</h3>
-<p>Price: ₹2,80,000</p>
+<img src="auto1.jpg">
+<h3>Passenger Auto 2020</h3>
+<p>₹2,80,000</p>
+<p>✔ Easy Finance</p>
 <a class="btn" href="tel:YOURNUMBER">Call Now</a>
 </div>
 
@@ -123,9 +151,22 @@ footer {
 </section>
 
 <section>
+<h2>Finance Services</h2>
+<ul>
+<li>Low Down Payment</li>
+<li>Quick Loan Approval</li>
+<li>Flexible EMI Options</li>
+<li>Used Vehicle Finance Available</li>
+</ul>
+</section>
+
+<section>
 <h2>Contact</h2>
 <p><b>Phone:</b> YOUR NUMBER</p>
+<p><b>Location:</b> Your Area</p>
 </section>
+
+<a class="whatsapp" href="https://wa.me/91YOURNUMBER">💬</a>
 
 <footer>
 <p>© 2026 Bhuvana Kruthi Auto Consultancy</p>
