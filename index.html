@@ -343,7 +343,7 @@ grid-template-columns:1fr;
 
 <header class="hero">
 
-<img src="https://i.ibb.co/6R6V5Z5/logo.png" alt="Logo">
+<img src="logo.png" alt="BHUVANA KRUTHI AUTO CONSULTANCY Logo">
 
 <h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
 
@@ -691,8 +691,6 @@ target="_blank">
 
 </footer>
 
-<!-- SCRIPT -->
-
 <script>
 
 const searchInput =
@@ -756,39 +754,6 @@ document.getElementById("emiResult").innerHTML =
 + " / month";
 
 }
-
-const waLink =
-document.getElementById("waLink");
-
-function updateWhatsApp(){
-
-let name =
-encodeURIComponent(document.getElementById("name").value);
-
-let phone =
-encodeURIComponent(document.getElementById("phone").value);
-
-let vehicle =
-encodeURIComponent(document.getElementById("vehicle").value);
-
-let message =
-encodeURIComponent(document.getElementById("message").value);
-
-waLink.href =
-`https://wa.me/919966446878?text=
-Name:${name}%0A
-Phone:${phone}%0A
-Vehicle:${vehicle}%0A
-Message:${message}`;
-
-}
-
-document.querySelectorAll("input,textarea,select")
-.forEach(el => {
-
-el.addEventListener("input", updateWhatsApp);
-
-});
 
 </script>
 
