@@ -7,108 +7,84 @@
 
 <style>
 
-:root{
---primary:#0b2f63;
---primary2:#163e8f;
---accent:#1db954;
---bg:#f4f7fb;
---card:#ffffff;
---text:#102033;
---line:#dbe3ef;
-}
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:var(--bg);
-color:var(--text);
+background:#f3f5f9;
 }
 
 /* HERO */
 
 .hero{
 background:
-linear-gradient(rgba(6,18,45,.60), rgba(6,18,45,.60)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
-color:#fff;
 text-align:center;
-padding:30px 16px 18px;
+padding:30px 15px;
+color:white;
 }
 
-.hero-logo-wrap{
-width:min(430px,92vw);
-margin:0 auto 18px;
-padding:0;
-border-radius:30px;
-background:transparent;
-box-shadow:0 10px 35px rgba(0,0,0,.45);
-}
-
-.hero-logo{
-width:100%;
-height:auto;
-display:block;
-border-radius:30px;
+.hero img{
+width:340px;
+max-width:90%;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
 }
 
 .hero h1{
 margin-top:20px;
-font-size:clamp(2rem,4vw,3.5rem);
-text-shadow:0 4px 15px rgba(0,0,0,.4);
+font-size:55px;
+font-weight:bold;
+text-shadow:0 4px 10px rgba(0,0,0,.5);
 }
 
 .hero p{
 margin-top:10px;
-font-size:1.2rem;
+font-size:22px;
 }
 
-.trust-row{
+.trust{
+margin-top:15px;
 display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-margin-top:15px;
 font-weight:bold;
-color:#66ff99;
+color:#57ff91;
 }
 
 /* NAVBAR */
 
 nav{
-background:linear-gradient(90deg,var(--primary2),#2457c3);
-padding:14px;
+background:#173f95;
+padding:15px;
 position:sticky;
 top:0;
-z-index:999;
+z-index:1000;
 }
 
-.nav-inner{
+nav ul{
 display:flex;
 justify-content:center;
-gap:20px;
+list-style:none;
+gap:30px;
 flex-wrap:wrap;
 }
 
-.nav-inner a{
+nav a{
 color:white;
 text-decoration:none;
 font-weight:bold;
-padding:8px 12px;
-border-radius:8px;
 }
 
-.nav-inner a:hover{
-background:rgba(255,255,255,.15);
-}
-
-/* SEARCH */
+/* MAIN */
 
 .container{
 max-width:1300px;
@@ -116,43 +92,46 @@ margin:auto;
 padding:20px;
 }
 
-.search-wrap{
+.search{
 display:flex;
 justify-content:center;
 margin:20px 0;
 }
 
-.search-wrap input{
-width:min(100%,600px);
+.search input{
+width:600px;
+max-width:95%;
 padding:15px;
-border-radius:14px;
-border:1px solid var(--line);
-font-size:1rem;
-box-shadow:0 4px 16px rgba(0,0,0,.08);
+border-radius:12px;
+border:1px solid #ccc;
+font-size:16px;
 }
 
-/* TITLES */
+/* TITLE */
 
-.section-title{
+.title{
 text-align:center;
-font-size:2rem;
-margin:30px 0 20px;
-color:#15346a;
+font-size:45px;
+color:#173f95;
+margin:30px 0;
+font-weight:bold;
 }
 
-/* CARDS */
+/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
 }
+
+/* CARD */
 
 .card{
 background:white;
-border-radius:18px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+box-shadow:0 8px 20px rgba(0,0,0,.1);
 transition:.3s;
 }
 
@@ -162,40 +141,39 @@ transform:translateY(-5px);
 
 .card img{
 width:100%;
-height:220px;
+height:240px;
 object-fit:cover;
 }
 
 .card-body{
-padding:18px;
+padding:20px;
 }
 
-.card h3{
-font-size:1.5rem;
+.card-body h2{
+font-size:32px;
 margin-bottom:10px;
 }
 
 .price{
-font-size:1.6rem;
-font-weight:bold;
+font-size:35px;
 color:#173f95;
+font-weight:bold;
 margin-bottom:10px;
 }
 
 .badges{
 display:flex;
-flex-wrap:wrap;
 gap:10px;
+flex-wrap:wrap;
 margin-bottom:15px;
 }
 
 .badge{
-background:#e9f9ef;
-color:#0f7a45;
-padding:7px 12px;
+background:#e8fff0;
+padding:8px 14px;
 border-radius:20px;
-font-size:.9rem;
 font-weight:bold;
+color:#0b8a4d;
 }
 
 .actions{
@@ -205,16 +183,15 @@ flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:12px 18px;
+padding:14px 20px;
 border-radius:10px;
-background:var(--accent);
-color:white;
-font-weight:bold;
 text-decoration:none;
+font-weight:bold;
+color:white;
+background:#1db954;
 }
 
-.btn-dark{
+.dark{
 background:#0f172a;
 }
 
@@ -223,25 +200,26 @@ background:#0f172a;
 .dashboard{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:20px;
-margin-top:30px;
+gap:25px;
+margin-top:40px;
 }
 
 .panel{
 background:white;
 padding:20px;
-border-radius:18px;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
 }
 
 .panel h2{
 margin-bottom:15px;
-color:#15346a;
+color:#173f95;
 }
 
 label{
 display:block;
-margin:10px 0 6px;
+margin-top:12px;
+margin-bottom:6px;
 font-weight:bold;
 }
 
@@ -258,20 +236,21 @@ textarea{
 min-height:100px;
 }
 
-.result-box{
+.result{
 margin-top:15px;
 padding:15px;
-background:#f5f8ff;
 border-radius:12px;
+background:#f0f5ff;
+font-size:24px;
 font-weight:bold;
-font-size:1.2rem;
+color:#173f95;
 }
 
-.maps iframe{
+iframe{
 width:100%;
-height:260px;
+height:250px;
 border:none;
-border-radius:14px;
+border-radius:12px;
 margin-top:15px;
 }
 
@@ -279,21 +258,21 @@ margin-top:15px;
 
 .contact-bar{
 margin-top:30px;
-background:linear-gradient(90deg,#0b2f63,#15409a);
+background:#173f95;
 color:white;
-border-radius:18px;
+border-radius:20px;
 display:grid;
 grid-template-columns:1fr 1fr;
 overflow:hidden;
 }
 
 .contact-box{
-padding:25px;
+padding:30px;
 text-align:center;
 }
 
-.contact-big{
-font-size:2rem;
+.big{
+font-size:35px;
 font-weight:bold;
 margin-top:10px;
 }
@@ -308,7 +287,7 @@ padding:20px;
 margin-top:30px;
 }
 
-footer .slogan{
+.slogan{
 margin-top:10px;
 color:#ffd54d;
 font-weight:bold;
@@ -316,22 +295,21 @@ font-weight:bold;
 
 /* WHATSAPP FLOAT */
 
-.whatsapp-float{
+.float{
 position:fixed;
-bottom:20px;
 right:20px;
-width:65px;
-height:65px;
-border-radius:50%;
+bottom:20px;
+width:70px;
+height:70px;
 background:#25D366;
+border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:34px;
-color:white;
+font-size:35px;
 text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,.25);
-z-index:9999;
+color:white;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
 /* MOBILE */
@@ -339,7 +317,15 @@ z-index:9999;
 @media(max-width:768px){
 
 .hero h1{
-font-size:2rem;
+font-size:34px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.title{
+font-size:35px;
 }
 
 .contact-bar{
@@ -357,19 +343,13 @@ grid-template-columns:1fr;
 
 <header class="hero">
 
-<div class="hero-logo-wrap">
-
-<img class="hero-logo"
-src="logo.png"
-alt="BHUVANA KRUTHI AUTO CONSULTANCY Logo">
-
-</div>
+<img src="https://i.ibb.co/6R6V5Z5/logo.png" alt="Logo">
 
 <h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
 
 <p>Buy Second-Hand Cars & Autos with Easy Finance</p>
 
-<div class="trust-row">
+<div class="trust">
 <span>✔ Trusted Service</span>
 <span>✔ Finance Available</span>
 <span>✔ Quick Approval</span>
@@ -377,20 +357,19 @@ alt="BHUVANA KRUTHI AUTO CONSULTANCY Logo">
 
 </header>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 
 <nav>
 
-<div class="nav-inner">
+<ul>
 
-<a href="#">Home</a>
-<a href="#">Cars</a>
-<a href="#">Autos</a>
-<a href="#">Finance</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<li><a href="#">Home</a></li>
+<li><a href="#">Cars</a></li>
+<li><a href="#">Autos</a></li>
+<li><a href="#">Finance</a></li>
+<li><a href="#">Contact</a></li>
 
-</div>
+</ul>
 
 </nav>
 
@@ -398,41 +377,63 @@ alt="BHUVANA KRUTHI AUTO CONSULTANCY Logo">
 
 <div class="container">
 
-<div class="search-wrap">
+<div class="search">
 
-<input type="text" id="searchInput" placeholder="Search vehicles...">
+<input type="text"
+id="searchInput"
+placeholder="Search vehicles...">
 
 </div>
 
 <!-- CARS -->
 
-<h2 class="section-title">AVAILABLE CARS</h2>
+<div class="title">
+AVAILABLE CARS
+</div>
 
 <div class="grid" id="vehicleGrid">
 
+<!-- CARD 1 -->
+
 <div class="card vehicle-card">
 
-<img src="car1.jpg" alt="Swift">
+<img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-body">
 
-<h3>Maruti Swift 2018</h3>
+<h2>Maruti Swift 2018</h2>
 
-<div class="price">₹4,50,000</div>
+<div class="price">
+₹4,50,000
+</div>
 
 <div class="badges">
-<span class="badge">Finance Available</span>
-<span class="badge">EMI Support</span>
+
+<div class="badge">
+Finance Available
+</div>
+
+<div class="badge">
+EMI Support
+</div>
+
 </div>
 
 <div class="actions">
 
-<a class="btn" href="tel:9966446878">📞 Call Now</a>
+<a class="btn"
+href="tel:9966446878">
 
-<a class="btn btn-dark"
+📞 Call Now
+
+</a>
+
+<a class="btn dark"
 href="https://wa.me/919966446878"
 target="_blank">
+
 WhatsApp
+
 </a>
 
 </div>
@@ -441,29 +442,47 @@ WhatsApp
 
 </div>
 
+<!-- CARD 2 -->
+
 <div class="card vehicle-card">
 
-<img src="car2.jpg" alt="i20">
+<img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-body">
 
-<h3>Hyundai i20 2019</h3>
+<h2>Hyundai i20 2019</h2>
 
-<div class="price">₹5,20,000</div>
+<div class="price">
+₹5,20,000
+</div>
 
 <div class="badges">
-<span class="badge">Low EMI</span>
-<span class="badge">Easy Approval</span>
+
+<div class="badge">
+Low EMI
+</div>
+
+<div class="badge">
+Easy Approval
+</div>
+
 </div>
 
 <div class="actions">
 
-<a class="btn" href="tel:9966446878">📞 Call Now</a>
+<a class="btn"
+href="tel:9966446878">
 
-<a class="btn btn-dark"
+📞 Call Now
+
+</a>
+
+<a class="btn dark"
 href="https://wa.me/919966446878"
 target="_blank">
+
 WhatsApp
+
 </a>
 
 </div>
@@ -476,32 +495,47 @@ WhatsApp
 
 <!-- AUTOS -->
 
-<h2 class="section-title">AUTOS</h2>
+<div class="title">
+AUTOS
+</div>
 
 <div class="grid">
 
 <div class="card">
 
-<img src="auto1.jpg" alt="Auto">
+<img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=1200&auto=format&fit=crop">
 
 <div class="card-body">
 
-<h3>Passenger Auto 2020</h3>
+<h2>Passenger Auto 2020</h2>
 
-<div class="price">₹2,80,000</div>
+<div class="price">
+₹2,80,000
+</div>
 
 <div class="badges">
-<span class="badge">Easy Finance</span>
+
+<div class="badge">
+Easy Finance
+</div>
+
 </div>
 
 <div class="actions">
 
-<a class="btn" href="tel:9966446878">📞 Call Now</a>
+<a class="btn"
+href="tel:9966446878">
 
-<a class="btn btn-dark"
+📞 Call Now
+
+</a>
+
+<a class="btn dark"
 href="https://wa.me/919966446878"
 target="_blank">
+
 WhatsApp
+
 </a>
 
 </div>
@@ -522,7 +556,7 @@ WhatsApp
 
 <h2>Finance Calculator</h2>
 
-<label>Vehicle Price (₹)</label>
+<label>Vehicle Price</label>
 <input type="number" id="amount">
 
 <label>Interest Rate (%)</label>
@@ -533,12 +567,17 @@ WhatsApp
 
 <br><br>
 
-<button class="btn" onclick="calculateEMI()">
+<button class="btn"
+onclick="calculateEMI()">
+
 Calculate EMI
+
 </button>
 
-<div class="result-box" id="emiResult">
+<div class="result" id="emiResult">
+
 ₹0 / month
+
 </div>
 
 </div>
@@ -555,12 +594,14 @@ Calculate EMI
 <label>Phone Number</label>
 <input type="tel" id="phone">
 
-<label>Interested In</label>
+<label>Interested Vehicle</label>
 
 <select id="vehicle">
+
 <option>Maruti Swift 2018</option>
 <option>Hyundai i20 2019</option>
 <option>Passenger Auto 2020</option>
+
 </select>
 
 <label>Message</label>
@@ -574,7 +615,7 @@ id="waLink"
 href="https://wa.me/919966446878"
 target="_blank">
 
-Send Enquiry on WhatsApp
+Send Enquiry
 
 </a>
 
@@ -592,11 +633,7 @@ Send Enquiry on WhatsApp
 
 <p><b>Email:</b> bhuvanakruthiauto@gmail.com</p>
 
-<div class="maps">
-
 <iframe src="https://maps.google.com/maps?q=vijayawada&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-
-</div>
 
 </div>
 
@@ -610,7 +647,7 @@ Send Enquiry on WhatsApp
 
 <div>Need Help? Call us now!</div>
 
-<div class="contact-big">
+<div class="big">
 9966446878
 </div>
 
@@ -620,7 +657,7 @@ Send Enquiry on WhatsApp
 
 <div>Chat with us on WhatsApp</div>
 
-<div class="contact-big">
+<div class="big">
 Quick Response
 </div>
 
@@ -632,7 +669,7 @@ Quick Response
 
 <!-- FLOAT -->
 
-<a class="whatsapp-float"
+<a class="float"
 href="https://wa.me/919966446878"
 target="_blank">
 
@@ -644,9 +681,9 @@ target="_blank">
 
 <footer>
 
-<p>
+<div>
 © 2026 BHUVANA KRUTHI AUTO CONSULTANCY
-</p>
+</div>
 
 <div class="slogan">
 ★ DRIVING YOUR DREAMS, FINANCING YOUR FUTURE ★
