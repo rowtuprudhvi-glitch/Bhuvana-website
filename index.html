@@ -4,352 +4,388 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>BHUVANA KRUTHI AUTO CONSULTANCY</title>
+
 <style>
-  :root{
-    --primary:#0a3d62;
-    --primary-2:#1e3799;
-    --accent:#27ae60;
-    --bg:#f4f6f9;
-    --card:#ffffff;
-    --text:#1e1e1e;
-    --muted:#6b7280;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-  a{text-decoration:none}
+:root{
+--primary:#0a3d62;
+--secondary:#1e3799;
+--accent:#27ae60;
+--bg:#f4f6f9;
+}
 
-  header{
-    background:linear-gradient(180deg,var(--primary),#0b4b77);
-    color:#fff;
-    text-align:center;
-    padding:24px 16px 20px;
-  }
-  .brand-wrap{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-  .logo-box{
-    width:84px;height:84px;border-radius:18px;background:#fff2;display:grid;place-items:center;overflow:hidden;
-    box-shadow:0 10px 24px rgba(0,0,0,.2);
-    border:1px solid rgba(255,255,255,.2)
-  }
-  .logo-box img{width:100%;height:100%;object-fit:cover;display:block}
-  .logo-fallback{
-    width:100%;height:100%;display:none;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:#fff;background:rgba(255,255,255,.10)
-  }
-  header h1{margin:0;font-size:clamp(1.5rem,4vw,2.4rem);letter-spacing:.5px}
-  header p{margin:10px 0 0;font-size:1rem;opacity:.95}
-  .trust{margin-top:10px;font-size:.95rem;opacity:.95}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
 
-  nav{
-    background:var(--primary-2);
-    padding:10px 12px;
-    position:sticky;top:0;z-index:20;
-    box-shadow:0 2px 10px rgba(0,0,0,.12)
-  }
-  nav .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-  nav a{color:#fff;font-weight:700;padding:8px 10px;border-radius:8px}
-  nav a:hover{background:rgba(255,255,255,.12)}
+body{
+background:var(--bg);
+color:#111;
+}
 
-  .container{max-width:1200px;margin:0 auto;padding:22px 16px 34px}
-  .searchbar{display:flex;justify-content:center;margin:10px 0 24px}
-  .searchbar input{
-    width:min(100%,560px);padding:14px 16px;border:1px solid #d1d5db;border-radius:12px;font-size:1rem;outline:none;background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,.04)
-  }
-  .section-title{font-size:1.6rem;margin:18px 0 16px;text-align:center}
-  .subtext{text-align:center;color:var(--muted);margin-top:-6px;margin-bottom:18px}
+header{
+background:var(--primary);
+color:white;
+padding:20px;
+text-align:center;
+}
 
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:18px;
-  }
-  .card{
-    background:var(--card);
-    border-radius:18px;
-    box-shadow:0 8px 24px rgba(15,23,42,.08);
-    overflow:hidden;
-    border:1px solid #eef2f7;
-    display:flex;
-    flex-direction:column;
-  }
-  .card-media{
-    height:180px;
-    background:linear-gradient(135deg,#dbeafe,#fef3c7);
-    display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;
-  }
-  .card-media img{width:100%;height:100%;object-fit:cover;display:block}
-  .media-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0f172a;font-weight:700;font-size:1.25rem;text-align:center;padding:12px}
-  .card-body{padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
-  .card h3{margin:0;font-size:1.15rem}
-  .price{font-size:1.15rem;font-weight:700;color:#111827}
-  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
-  .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef6ff;color:#1d4ed8;font-size:.9rem;font-weight:700}
-  .chip.green{background:#ecfdf3;color:#047857}
-  .chip.gold{background:#fff7ed;color:#c2410c}
-  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    background:var(--accent);color:#fff;padding:11px 14px;border-radius:10px;font-weight:700;min-width:120px;
-    box-shadow:0 6px 14px rgba(39,174,96,.22)
-  }
-  .btn.secondary{background:#0f172a}
-  .btn.outline{background:#fff;color:#0f172a;border:1px solid #d1d5db;box-shadow:none}
+header img{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:10px;
+}
 
-  .panel{
-    background:#fff;border-radius:18px;box-shadow:0 8px 24px rgba(15,23,42,.08);border:1px solid #eef2f7;padding:18px;margin-top:18px
-  }
-  .panel h2{margin:0 0 14px;font-size:1.4rem}
-  .panel p{margin:8px 0;color:#374151;line-height:1.55}
-  .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-  label{display:block;font-size:.95rem;font-weight:700;margin-bottom:6px}
-  input,textarea,select{
-    width:100%;padding:12px 12px;border:1px solid #d1d5db;border-radius:10px;font-size:1rem;background:#fff;outline:none
-  }
-  textarea{min-height:110px;resize:vertical}
-  .result-box{
-    margin-top:14px;padding:14px;border-radius:14px;background:#f8fafc;border:1px dashed #cbd5e1
-  }
-  .result-box strong{font-size:1.1rem}
-  .maps{
-    overflow:hidden;border-radius:14px;border:1px solid #e5e7eb;margin-top:10px
-  }
-  .maps iframe{width:100%;height:320px;border:0;display:block}
+header h1{
+font-size:2rem;
+margin-bottom:10px;
+}
 
-  footer{background:var(--primary);color:#fff;text-align:center;padding:18px 12px;margin-top:24px}
+nav{
+background:var(--secondary);
+padding:12px;
+text-align:center;
+}
 
-  .whatsapp-float{
-    position:fixed;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;
-    background:#25D366;color:#fff;display:grid;place-items:center;font-size:30px;box-shadow:0 10px 24px rgba(0,0,0,.18);z-index:30
-  }
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
 
-  @media (max-width: 600px){
-    nav .nav-inner{gap:8px}
-    nav a{padding:8px 8px;font-size:.95rem}
-    .card-media{height:170px}
-  }
+.search-box{
+padding:20px;
+text-align:center;
+}
+
+.search-box input{
+width:90%;
+max-width:500px;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.section-title{
+text-align:center;
+margin:20px 0;
+font-size:2rem;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:1.3rem;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.badge{
+display:inline-block;
+padding:6px 10px;
+background:#d1fae5;
+color:#065f46;
+border-radius:20px;
+font-size:0.9rem;
+margin:5px 5px 10px 0;
+}
+
+.btn{
+display:inline-block;
+padding:10px 15px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:10px;
+margin-right:10px;
+}
+
+.btn-dark{
+background:#111827;
+}
+
+.finance-box{
+background:white;
+padding:20px;
+margin:20px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.finance-box input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+.result{
+margin-top:15px;
+font-size:1.2rem;
+font-weight:bold;
+}
+
+.contact{
+background:white;
+padding:20px;
+margin:20px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+iframe{
+width:100%;
+height:300px;
+border:none;
+border-radius:10px;
+margin-top:15px;
+}
+
+footer{
+background:var(--primary);
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+}
+
+@media(max-width:600px){
+nav a{
+display:block;
+margin:10px 0;
+}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="brand-wrap">
-    <div class="logo-box">
-      <img src="logo.png" alt="BHUVANA KRUTHI AUTO CONSULTANCY logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="logo-fallback">BK</div>
-    </div>
-    <div>
-      <h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
-      <p>Buy Second-Hand Cars & Autos with Easy Finance</p>
-      <div class="trust">✔ 100+ Happy Customers | ✔ Trusted Service | ✔ Quick Support</div>
-    </div>
-  </div>
+<img src="logo.png" alt="Logo">
+<h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
+<p>Buy Second-Hand Cars & Autos with Easy Finance</p>
+<p>✔ Trusted Service ✔ Finance Available ✔ Quick Approval</p>
 </header>
 
 <nav>
-  <div class="nav-inner">
-    <a href="#home">Home</a>
-    <a href="#cars">Cars</a>
-    <a href="#autos">Autos</a>
-    <a href="#finance">Finance</a>
-    <a href="#contact">Contact</a>
-  </div>
+<a href="#">Home</a>
+<a href="#">Cars</a>
+<a href="#">Autos</a>
+<a href="#">Finance</a>
+<a href="#">Contact</a>
 </nav>
 
-<div class="container" id="home">
-  <div class="searchbar">
-    <input id="searchInput" type="text" placeholder="Search cars, autos, model, price..." aria-label="Search vehicles" />
-  </div>
-
-  <h2 class="section-title">Available Cars</h2>
-  <p class="subtext">Choose a vehicle, check finance options, and contact us instantly.</p>
-
-  <div class="grid" id="vehicleGrid">
-    <article class="card vehicle-card" data-name="swift 2018 maruti car finance available 450000">
-      <div class="card-media">
-        <img src="car1.jpg" alt="Maruti Swift 2018" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="media-fallback">Maruti Swift 2018</div>
-      </div>
-      <div class="card-body">
-        <h3>Maruti Swift 2018</h3>
-        <div class="price">₹4,50,000</div>
-        <div class="chip-row">
-          <span class="chip green">Finance Available</span>
-          <span class="chip gold">EMI Support</span>
-        </div>
-        <div class="actions">
-          <a class="btn" href="tel:9966446878">Call Now</a>
-          <a class="btn outline" href="https://wa.me/91YOURNUMBER?text=I%20am%20interested%20in%20Maruti%20Swift%202018" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="card vehicle-card" data-name="i20 2019 hyundai car low emi 520000">
-      <div class="card-media">
-        <img src="car2.jpg" alt="Hyundai i20 2019" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="media-fallback">Hyundai i20 2019</div>
-      </div>
-      <div class="card-body">
-        <h3>Hyundai i20 2019</h3>
-        <div class="price">₹5,20,000</div>
-        <div class="chip-row">
-          <span class="chip green">Low EMI</span>
-          <span class="chip gold">Easy Approval</span>
-        </div>
-        <div class="actions">
-          <a class="btn" href="tel:YOURNUMBER">Call Now</a>
-          <a class="btn outline" href="https://wa.me/91YOURNUMBER?text=I%20am%20interested%20in%20Hyundai%20i20%202019" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <h2 class="section-title" id="autos">Autos</h2>
-  <div class="grid">
-    <article class="card vehicle-card" data-name="passenger auto 2020 auto finance 280000">
-      <div class="card-media">
-        <img src="auto1.jpg" alt="Passenger Auto 2020" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="media-fallback">Passenger Auto 2020</div>
-      </div>
-      <div class="card-body">
-        <h3>Passenger Auto 2020</h3>
-        <div class="price">₹2,80,000</div>
-        <div class="chip-row">
-          <span class="chip green">Easy Finance</span>
-          <span class="chip gold">Trusted Deal</span>
-        </div>
-        <div class="actions">
-          <a class="btn" href="tel:YOURNUMBER">Call Now</a>
-          <a class="btn outline" href="https://wa.me/91YOURNUMBER?text=I%20am%20interested%20in%20Passenger%20Auto%202020" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <section class="panel" id="finance">
-    <h2>Finance Calculator</h2>
-    <p>Calculate an estimated monthly EMI for a vehicle loan.</p>
-
-    <div class="form-grid">
-      <div>
-        <label for="vehiclePrice">Vehicle Price (₹)</label>
-        <input id="vehiclePrice" type="number" placeholder="450000" />
-      </div>
-      <div>
-        <label for="downPayment">Down Payment (₹)</label>
-        <input id="downPayment" type="number" placeholder="50000" />
-      </div>
-      <div>
-        <label for="interestRate">Interest Rate (% per year)</label>
-        <input id="interestRate" type="number" step="0.1" placeholder="12" />
-      </div>
-      <div>
-        <label for="tenure">Tenure (Months)</label>
-        <input id="tenure" type="number" placeholder="36" />
-      </div>
-    </div>
-
-    <div class="actions" style="margin-top:12px;">
-      <button class="btn" type="button" onclick="calculateEMI()">Calculate EMI</button>
-      <button class="btn secondary" type="button" onclick="fillSample()">Use Sample Values</button>
-    </div>
-
-    <div class="result-box" id="emiResult">
-      <strong>Monthly EMI:</strong> ₹0<br>
-      <span style="color:#6b7280;">Fill the values and calculate.</span>
-    </div>
-  </section>
-
-  <section class="panel">
-    <h2>Enquiry Form</h2>
-    <p>Send your vehicle requirement on WhatsApp.</p>
-    <div class="form-grid">
-      <div>
-        <label for="enqName">Your Name</label>
-        <input id="enqName" type="text" placeholder="Enter your name" />
-      </div>
-      <div>
-        <label for="enqPhone">Phone Number</label>
-        <input id="enqPhone" type="tel" placeholder="Enter your phone number" />
-      </div>
-      <div style="grid-column:1/-1;">
-        <label for="enqMessage">Requirement</label>
-        <textarea id="enqMessage" placeholder="Example: Need Swift / i20 / Auto with finance"></textarea>
-      </div>
-    </div>
-    <div class="actions">
-      <a class="btn" id="waEnquiryLink" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener">Send on WhatsApp</a>
-    </div>
-  </section>
-
-  <section class="panel" id="contact">
-    <h2>Contact</h2>
-    <p><b>Phone:</b> YOUR NUMBER</p>
-    <p><b>Location:</b> Your Area</p>
-    <div class="maps">
-      <iframe src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </section>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search vehicles...">
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/91YOURNUMBER" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<h2 class="section-title">Available Cars</h2>
+
+<div class="grid" id="vehicleGrid">
+
+<div class="card vehicle-card">
+<img src="car1.jpg" alt="Swift">
+<div class="card-content">
+<h3>Maruti Swift 2018</h3>
+<div class="price">₹4,50,000</div>
+
+<span class="badge">Finance Available</span>
+<span class="badge">EMI Support</span>
+
+<br>
+
+<a class="btn" href="tel:9966446878">Call Now</a>
+
+<a class="btn btn-dark"
+href="https://wa.me/919966446878?text=I%20am%20interested%20in%20Maruti%20Swift%202018"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+</div>
+
+<div class="card vehicle-card">
+<img src="car2.jpg" alt="i20">
+<div class="card-content">
+<h3>Hyundai i20 2019</h3>
+<div class="price">₹5,20,000</div>
+
+<span class="badge">Low EMI</span>
+<span class="badge">Easy Approval</span>
+
+<br>
+
+<a class="btn" href="tel:9966446878">Call Now</a>
+
+<a class="btn btn-dark"
+href="https://wa.me/919966446878?text=I%20am%20interested%20in%20Hyundai%20i20%202019"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+</div>
+
+</div>
+
+<h2 class="section-title">Autos</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="auto1.jpg" alt="Auto">
+<div class="card-content">
+
+<h3>Passenger Auto 2020</h3>
+
+<div class="price">₹2,80,000</div>
+
+<span class="badge">Easy Finance</span>
+
+<br>
+
+<a class="btn" href="tel:9966446878">Call Now</a>
+
+<a class="btn btn-dark"
+href="https://wa.me/919966446878?text=I%20am%20interested%20in%20Passenger%20Auto%202020"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+</div>
+
+</div>
+
+<div class="finance-box">
+
+<h2>Finance Calculator</h2>
+
+<input type="number" id="amount" placeholder="Vehicle Price">
+
+<input type="number" id="interest" placeholder="Interest Rate (%)">
+
+<input type="number" id="months" placeholder="Loan Months">
+
+<button class="btn" onclick="calculateEMI()">Calculate EMI</button>
+
+<div class="result" id="emiResult"></div>
+
+</div>
+
+<div class="contact">
+
+<h2>Contact Us</h2>
+
+<p><b>Phone:</b> 9966446878</p>
+
+<p><b>Business:</b> BHUVANA KRUTHI AUTO CONSULTANCY</p>
+
+<iframe src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+<a class="whatsapp-float"
+href="https://wa.me/919966446878"
+target="_blank">
+💬
+</a>
 
 <footer>
-  <p>© 2026 BHUVANA KRUTHI AUTO CONSULTANCY</p>
+<p>© 2026 BHUVANA KRUTHI AUTO CONSULTANCY</p>
 </footer>
 
 <script>
-  const searchInput = document.getElementById('searchInput');
-  const cards = document.querySelectorAll('.vehicle-card');
 
-  searchInput.addEventListener('input', () => {
-    const q = searchInput.value.trim().toLowerCase();
-    cards.forEach(card => {
-      const text = (card.dataset.name || '') + ' ' + card.innerText.toLowerCase();
-      card.style.display = text.includes(q) ? '' : 'none';
-    });
-  });
+const searchInput = document.getElementById("searchInput");
 
-  function calculateEMI() {
-    const price = Number(document.getElementById('vehiclePrice').value || 0);
-    const down = Number(document.getElementById('downPayment').value || 0);
-    const annualRate = Number(document.getElementById('interestRate').value || 0);
-    const months = Number(document.getElementById('tenure').value || 0);
+searchInput.addEventListener("keyup", function() {
 
-    const principal = Math.max(price - down, 0);
-    let emi = 0;
-    if (principal > 0 && annualRate > 0 && months > 0) {
-      const r = annualRate / 12 / 100;
-      emi = (principal * r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
-    } else if (principal > 0 && months > 0) {
-      emi = principal / months;
-    }
+let value = searchInput.value.toLowerCase();
 
-    const totalPayable = emi * months;
-    const result = document.getElementById('emiResult');
-    result.innerHTML = `<strong>Monthly EMI:</strong> ₹${emi ? emi.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '0'}<br><span style="color:#6b7280;">Loan amount: ₹${principal.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')} | Total payable: ₹${totalPayable.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>`;
-  }
+let cards = document.querySelectorAll(".vehicle-card");
 
-  function fillSample() {
-    document.getElementById('vehiclePrice').value = 450000;
-    document.getElementById('downPayment').value = 50000;
-    document.getElementById('interestRate').value = 12;
-    document.getElementById('tenure').value = 36;
-    calculateEMI();
-  }
+cards.forEach(card => {
 
-  const enquiryLink = document.getElementById('waEnquiryLink');
-  const phone = '91YOURNUMBER';
-  ['enqName', 'enqPhone', 'enqMessage'].forEach(id => {
-    document.getElementById(id).addEventListener('input', updateEnquiryLink);
-  });
+if(card.innerText.toLowerCase().includes(value)){
+card.style.display = "block";
+}
+else{
+card.style.display = "none";
+}
 
-  function updateEnquiryLink() {
-    const name = encodeURIComponent(document.getElementById('enqName').value || 'Customer');
-    const mobile = encodeURIComponent(document.getElementById('enqPhone').value || '');
-    const msg = encodeURIComponent(document.getElementById('enqMessage').value || 'I am interested in your vehicles');
-    enquiryLink.href = `https://wa.me/${phone}?text=Name:%20${name}%0APhone:%20${mobile}%0ARequirement:%20${msg}`;
-  }
+});
+
+});
+
+function calculateEMI(){
+
+let P = parseFloat(document.getElementById("amount").value);
+
+let annualRate = parseFloat(document.getElementById("interest").value);
+
+let N = parseFloat(document.getElementById("months").value);
+
+let R = annualRate / 12 / 100;
+
+let EMI = (P * R * Math.pow(1 + R, N)) /
+(Math.pow(1 + R, N) - 1);
+
+document.getElementById("emiResult").innerHTML =
+"Estimated EMI: ₹" + EMI.toFixed(0) + "/month";
+
+}
+
 </script>
 
 </body>
