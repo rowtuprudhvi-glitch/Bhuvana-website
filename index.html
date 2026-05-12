@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BHUVANA KRUTHI AUTO CONSULTANCY</title>
 
 <style>
+
 :root{
 --primary:#0a3d62;
 --secondary:#1e3799;
@@ -25,30 +26,53 @@ background:var(--bg);
 color:#111;
 }
 
+/* HEADER */
+
 header{
-background:var(--primary);
-color:white;
-padding:20px;
+background:url('bg.jpg') center/cover no-repeat;
+position:relative;
 text-align:center;
+color:white;
 }
 
-header img{
-width:100px;
-height:100px;
-object-fit:cover;
-border-radius:50%;
-margin-bottom:10px;
+.overlay{
+background:rgba(0,0,0,0.65);
+padding:40px 20px;
+}
+
+.logo{
+width:260px;
+max-width:90%;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+margin-bottom:20px;
 }
 
 header h1{
-font-size:2rem;
+font-size:3rem;
+margin-bottom:10px;
+text-shadow:2px 2px 10px black;
+}
+
+header p{
+font-size:1.2rem;
 margin-bottom:10px;
 }
 
+.trust{
+color:#00ff88;
+font-weight:bold;
+}
+
+/* NAVBAR */
+
 nav{
 background:var(--secondary);
-padding:12px;
+padding:15px;
 text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
@@ -56,39 +80,56 @@ color:white;
 text-decoration:none;
 margin:0 15px;
 font-weight:bold;
+font-size:1rem;
 }
 
+/* SEARCH */
+
 .search-box{
-padding:20px;
+padding:25px;
 text-align:center;
 }
 
 .search-box input{
 width:90%;
 max-width:500px;
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
+padding:14px;
+border-radius:10px;
+border:none;
+font-size:1rem;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+
+/* TITLES */
 
 .section-title{
 text-align:center;
-margin:20px 0;
+margin:25px 0;
 font-size:2rem;
+color:#0a3d62;
 }
+
+/* GRID */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+gap:25px;
 padding:20px;
 }
 
+/* CARD */
+
 .card{
 background:white;
-border-radius:15px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
@@ -98,89 +139,113 @@ object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:20px;
 }
 
 .card h3{
 margin-bottom:10px;
+font-size:1.5rem;
 }
 
 .price{
-font-size:1.3rem;
+font-size:1.5rem;
 font-weight:bold;
+color:#1e3799;
 margin-bottom:10px;
 }
 
 .badge{
 display:inline-block;
-padding:6px 10px;
+padding:8px 12px;
 background:#d1fae5;
 color:#065f46;
 border-radius:20px;
 font-size:0.9rem;
 margin:5px 5px 10px 0;
+font-weight:bold;
 }
 
 .btn{
 display:inline-block;
-padding:10px 15px;
+padding:12px 18px;
 background:var(--accent);
 color:white;
 text-decoration:none;
-border-radius:8px;
+border-radius:10px;
 margin-top:10px;
 margin-right:10px;
+font-weight:bold;
 }
 
 .btn-dark{
 background:#111827;
 }
 
+/* FINANCE */
+
 .finance-box{
 background:white;
-padding:20px;
+padding:25px;
 margin:20px;
-border-radius:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.finance-box h2{
+margin-bottom:15px;
 }
 
 .finance-box input{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
+border-radius:10px;
 border:1px solid #ccc;
-border-radius:8px;
+font-size:1rem;
 }
 
 .result{
 margin-top:15px;
-font-size:1.2rem;
+font-size:1.3rem;
 font-weight:bold;
+color:#1e3799;
 }
+
+/* CONTACT */
 
 .contact{
 background:white;
-padding:20px;
+padding:25px;
 margin:20px;
-border-radius:15px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact p{
+margin:10px 0;
+font-size:1rem;
 }
 
 iframe{
 width:100%;
 height:300px;
 border:none;
-border-radius:10px;
+border-radius:15px;
 margin-top:15px;
 }
 
+/* FOOTER */
+
 footer{
-background:var(--primary);
+background:#0a3d62;
 color:white;
 text-align:center;
-padding:15px;
+padding:20px;
 margin-top:30px;
+font-size:1rem;
 }
+
+/* WHATSAPP */
 
 .whatsapp-float{
 position:fixed;
@@ -188,33 +253,65 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-width:60px;
-height:60px;
+width:65px;
+height:65px;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:28px;
+font-size:32px;
 text-decoration:none;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
-@media(max-width:600px){
+/* MOBILE */
+
+@media(max-width:768px){
+
+header h1{
+font-size:2rem;
+}
+
 nav a{
 display:block;
 margin:10px 0;
 }
+
+.logo{
+width:180px;
 }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-<img src="logo.png" alt="Logo">
+
+<div class="overlay">
+
+<img src="logo.png" class="logo" alt="Logo">
+
 <h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
+
 <p>Buy Second-Hand Cars & Autos with Easy Finance</p>
-<p>✔ Trusted Service ✔ Finance Available ✔ Quick Approval</p>
+
+<p class="trust">
+✔ Trusted Service &nbsp;&nbsp;
+✔ Finance Available &nbsp;&nbsp;
+✔ Quick Approval
+</p>
+
+</div>
+
 </header>
+
+<!-- NAVBAR -->
 
 <nav>
 <a href="#">Home</a>
@@ -224,18 +321,26 @@ margin:10px 0;
 <a href="#">Contact</a>
 </nav>
 
+<!-- SEARCH -->
+
 <div class="search-box">
 <input type="text" id="searchInput" placeholder="Search vehicles...">
 </div>
+
+<!-- CARS -->
 
 <h2 class="section-title">Available Cars</h2>
 
 <div class="grid" id="vehicleGrid">
 
 <div class="card vehicle-card">
+
 <img src="car1.jpg" alt="Swift">
+
 <div class="card-content">
+
 <h3>Maruti Swift 2018</h3>
+
 <div class="price">₹4,50,000</div>
 
 <span class="badge">Finance Available</span>
@@ -252,12 +357,17 @@ WhatsApp
 </a>
 
 </div>
+
 </div>
 
 <div class="card vehicle-card">
+
 <img src="car2.jpg" alt="i20">
+
 <div class="card-content">
+
 <h3>Hyundai i20 2019</h3>
+
 <div class="price">₹5,20,000</div>
 
 <span class="badge">Low EMI</span>
@@ -274,16 +384,21 @@ WhatsApp
 </a>
 
 </div>
+
 </div>
 
 </div>
+
+<!-- AUTOS -->
 
 <h2 class="section-title">Autos</h2>
 
 <div class="grid">
 
 <div class="card">
+
 <img src="auto1.jpg" alt="Auto">
+
 <div class="card-content">
 
 <h3>Passenger Auto 2020</h3>
@@ -303,9 +418,12 @@ WhatsApp
 </a>
 
 </div>
+
 </div>
 
 </div>
+
+<!-- FINANCE -->
 
 <div class="finance-box">
 
@@ -323,6 +441,8 @@ WhatsApp
 
 </div>
 
+<!-- CONTACT -->
+
 <div class="contact">
 
 <h2>Contact Us</h2>
@@ -331,9 +451,13 @@ WhatsApp
 
 <p><b>Business:</b> BHUVANA KRUTHI AUTO CONSULTANCY</p>
 
-<iframe src="https://maps.google.com/maps?q=hyderabad&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+<p><b>Location:</b> Vijayawada, Andhra Pradesh</p>
+
+<iframe src="https://maps.google.com/maps?q=vijayawada&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 
 </div>
+
+<!-- WHATSAPP -->
 
 <a class="whatsapp-float"
 href="https://wa.me/919966446878"
@@ -341,9 +465,17 @@ target="_blank">
 💬
 </a>
 
+<!-- FOOTER -->
+
 <footer>
+
 <p>© 2026 BHUVANA KRUTHI AUTO CONSULTANCY</p>
+
+<p>Driving Your Dreams, Financing Your Future</p>
+
 </footer>
+
+<!-- SCRIPT -->
 
 <script>
 
