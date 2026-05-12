@@ -18,12 +18,12 @@ body{
 background:#f3f5f9;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero{
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
+linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+url('https://upload.wikimedia.org/wikipedia/commons/b/ba/Kanakadurga_Temple_gopuram.jpg');
 background-size:cover;
 background-position:center;
 text-align:center;
@@ -31,23 +31,27 @@ padding:30px 15px;
 color:white;
 }
 
+/* LOGO */
+
 .hero img{
-width:340px;
-max-width:90%;
-border-radius:25px;
+width:420px;
+max-width:95%;
+border-radius:30px;
 box-shadow:0 10px 30px rgba(0,0,0,.5);
+margin-bottom:20px;
 }
 
+/* TITLE */
+
 .hero h1{
-margin-top:20px;
-font-size:55px;
+font-size:60px;
 font-weight:bold;
 text-shadow:0 4px 10px rgba(0,0,0,.5);
 }
 
 .hero p{
 margin-top:10px;
-font-size:22px;
+font-size:24px;
 }
 
 .trust{
@@ -332,6 +336,10 @@ font-size:35px;
 grid-template-columns:1fr;
 }
 
+.hero img{
+width:260px;
+}
+
 }
 
 </style>
@@ -343,7 +351,9 @@ grid-template-columns:1fr;
 
 <header class="hero">
 
-<img src="logo.png" alt="BHUVANA KRUTHI AUTO CONSULTANCY Logo">
+<!-- YOUR OFFICE LOGO -->
+
+<img src="https://i.postimg.cc/wT1nW9KJ/bhuvana-logo.png" alt="BHUVANA KRUTHI AUTO CONSULTANCY Logo">
 
 <h1>BHUVANA KRUTHI AUTO CONSULTANCY</h1>
 
@@ -391,11 +401,11 @@ placeholder="Search vehicles...">
 AVAILABLE CARS
 </div>
 
-<div class="grid" id="vehicleGrid">
+<div class="grid">
 
 <!-- CARD 1 -->
 
-<div class="card vehicle-card">
+<div class="card">
 
 <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop">
 
@@ -444,7 +454,7 @@ WhatsApp
 
 <!-- CARD 2 -->
 
-<div class="card vehicle-card">
+<div class="card">
 
 <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop">
 
@@ -546,82 +556,9 @@ WhatsApp
 
 </div>
 
-<!-- PANELS -->
+<!-- CONTACT -->
 
 <div class="dashboard">
-
-<!-- EMI -->
-
-<div class="panel">
-
-<h2>Finance Calculator</h2>
-
-<label>Vehicle Price</label>
-<input type="number" id="amount">
-
-<label>Interest Rate (%)</label>
-<input type="number" id="interest">
-
-<label>Loan Months</label>
-<input type="number" id="months">
-
-<br><br>
-
-<button class="btn"
-onclick="calculateEMI()">
-
-Calculate EMI
-
-</button>
-
-<div class="result" id="emiResult">
-
-₹0 / month
-
-</div>
-
-</div>
-
-<!-- ENQUIRY -->
-
-<div class="panel">
-
-<h2>Enquire Now</h2>
-
-<label>Your Name</label>
-<input type="text" id="name">
-
-<label>Phone Number</label>
-<input type="tel" id="phone">
-
-<label>Interested Vehicle</label>
-
-<select id="vehicle">
-
-<option>Maruti Swift 2018</option>
-<option>Hyundai i20 2019</option>
-<option>Passenger Auto 2020</option>
-
-</select>
-
-<label>Message</label>
-
-<textarea id="message"></textarea>
-
-<br><br>
-
-<a class="btn"
-id="waLink"
-href="https://wa.me/919966446878"
-target="_blank">
-
-Send Enquiry
-
-</a>
-
-</div>
-
-<!-- CONTACT -->
 
 <div class="panel">
 
@@ -639,35 +576,9 @@ Send Enquiry
 
 </div>
 
-<!-- CONTACT BAR -->
-
-<div class="contact-bar">
-
-<div class="contact-box">
-
-<div>Need Help? Call us now!</div>
-
-<div class="big">
-9966446878
 </div>
 
-</div>
-
-<div class="contact-box">
-
-<div>Chat with us on WhatsApp</div>
-
-<div class="big">
-Quick Response
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- FLOAT -->
+<!-- WHATSAPP FLOAT -->
 
 <a class="float"
 href="https://wa.me/919966446878"
@@ -690,72 +601,6 @@ target="_blank">
 </div>
 
 </footer>
-
-<script>
-
-const searchInput =
-document.getElementById("searchInput");
-
-searchInput.addEventListener("keyup", function(){
-
-let value =
-searchInput.value.toLowerCase();
-
-let cards =
-document.querySelectorAll(".vehicle-card");
-
-cards.forEach(card => {
-
-if(card.innerText.toLowerCase().includes(value)){
-card.style.display = "block";
-}
-else{
-card.style.display = "none";
-}
-
-});
-
-});
-
-function calculateEMI(){
-
-let P =
-parseFloat(document.getElementById("amount").value || 0);
-
-let annualRate =
-parseFloat(document.getElementById("interest").value || 0);
-
-let N =
-parseFloat(document.getElementById("months").value || 0);
-
-let EMI = 0;
-
-if(P > 0 && N > 0){
-
-let R = annualRate / 12 / 100;
-
-if(R > 0){
-
-EMI =
-(P * R * Math.pow(1 + R, N)) /
-(Math.pow(1 + R, N) - 1);
-
-}
-else{
-
-EMI = P / N;
-
-}
-
-}
-
-document.getElementById("emiResult").innerHTML =
-"₹" + Math.round(EMI).toLocaleString('en-IN')
-+ " / month";
-
-}
-
-</script>
 
 </body>
 </html>
